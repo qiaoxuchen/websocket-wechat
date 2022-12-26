@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiao.users.dao.UserDao">
+    <select id="selectUser" resultType="com.qiao.users.bean.User" parameterType="com.qiao.users.bean.User">
+        select name as nickname,password from user  where name= #{nickname}
+    </select>
+
+    <insert id="insert" parameterType="com.qiao.users.bean.User">
+       insert into user (name,password) values(#{nickname},#{password})
+    </insert>
+</mapper>
